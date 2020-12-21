@@ -15,6 +15,8 @@ const App = () => {
 		setProducts(data);
 	};
 
+	// I cannot believe no one looks through my github. It is depressing.
+
 	useEffect(() => {
 		fetchProducts();
 	}, []);
