@@ -3,6 +3,7 @@ import { commerce } from './lib/commerce';
 
 //import Products from './components/Products/Products';
 //import NavBar from './components/Navbar/Navbar';
+// I am shit
 
 import { Products, NavBar } from './components';
 
@@ -25,7 +26,7 @@ const App = () => {
 	return (
 		<div>
 			<NavBar />
-			<Products />
+			<Products products={products} />
 		</div>
 	);
 };
