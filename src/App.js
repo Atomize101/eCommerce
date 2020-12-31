@@ -9,6 +9,7 @@ import { Products, NavBar } from './components';
 
 const App = () => {
 	const [products, setProducts] = useState([]);
+	const [cart, setCart] = useState({});
 
 	const fetchProducts = async () => {
 		const { data } = await commerce.products.list();
@@ -16,13 +17,16 @@ const App = () => {
 		setProducts(data);
 	};
 
-	// I cannot believe no one looks through my github. It is depressing.
+	const fetchCart = async () => {
+		setCart(await commerce.cart.retrieve());
+	};
 
 	useEffect(() => {
 		fetchProducts();
+		fetchCart();
 	}, []);
 
-	console.log(products);
+	console.log(cart);
 	return (
 		<div>
 			<NavBar />
