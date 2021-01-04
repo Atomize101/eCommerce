@@ -7,8 +7,6 @@ import useStyles from './styles';
 const Cart = ({ cart }) => {
 	const classes = useStyles();
 
-	if (!cart.line_items) return 'Loading';
-
 	const renderEmptyCart = () => (
 		<Typography variant="subtitle1">
 			You have no items in your shopping cart,
@@ -55,6 +53,8 @@ const Cart = ({ cart }) => {
 			</>
 		);
 	};
+
+	if (!cart.line_items) return 'Loading...';
 
 	return (
 		<Container>
