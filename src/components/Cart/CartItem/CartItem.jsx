@@ -8,20 +8,23 @@ const CartItem = ({ item }) => {
 	return (
 		<Card>
 			<CardMedia image={item.media.source} alt={item.name} className={classes.media} />
-			<CardContent classes={classes.cardContent}>
+			<CardContent className={classes.cardContent}>
 				<Typography variant="h4">{item.name}</Typography>
 				<Typography variant="h4">{item.line_total.formatted_with_symbol}</Typography>
 			</CardContent>
 			<CardActions classes={classes.cardActions}>
 				<div className={classes.buttons}>
-					<button type="button" size="small">
+					<Button type="button" size="small">
 						-
-					</button>
+					</Button>
 					<Typography>{item.quantity}</Typography>
-					<button type="button" size="small">
+					<Button type="button" size="small">
 						+
-					</button>
+					</Button>
 				</div>
+				<button variant="contained" type="button" color="secondary">
+					Remove
+				</button>
 			</CardActions>
 		</Card>
 	);
